@@ -6,11 +6,8 @@ function imagefetch(number) {
     .then(data => {console.log(data)   
         for (let i = 0; i < number; i++) {
             counter = counter + 1;
-        // console.log("pic" + i);
-        // document.getElementById("pic' + i).src=data[i]['hdurl'];
         appendPosts(data[i], counter)
     }});
-    
 }
 
 function likedislike(number) {
