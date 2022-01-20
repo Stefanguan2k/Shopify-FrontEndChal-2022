@@ -19,24 +19,19 @@ body {
     left: 0;
     display: flex;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.5);
+    background: white;
     z-index: 9999;
-    
 }
 
 .home {
     text-decoration: none;
 }
 
-@supports (backdrop-filter: blur()) {
+@supports (backdrop-filter: blur()) or (-webkit-backdrop-filter: blur()) {
     .navbar {
         backdrop-filter: blur(1rem);
-    }
-}
-
-@supports not (backdrop-filter: blur()) {
-    .navbar {
-        background: white;
+        -webkit-backdrop-filter: blur(1rem);
+        background: rgba(255, 255, 255, 0.5);
     }
 }
 
@@ -75,7 +70,6 @@ body {
     transition: 0.3s;
 }
 
-
 @media (max-width: 990px) {
     .container {
         grid-template-columns: 1fr;
@@ -84,7 +78,6 @@ body {
         padding: 2rem;
     }
 }
-
 
 .cards:hover {
     transform: scale(1.025);
@@ -168,7 +161,7 @@ body {
 
 .footer {
     background: rgb(206, 204, 204);
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 0.5rem;
     text-align: right;
     height: 1.5rem;
